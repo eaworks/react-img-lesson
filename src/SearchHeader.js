@@ -1,6 +1,10 @@
-function SearchHeader() {
+function SearchHeader({ search }) {
+    const handleFormSubmit = (event) => {
+        event.preventDefault(); // Sayfanın Yenilenmesini Engeller
+        search('ersin')
+    }
     return <div className="searchDiv">
-        <form>
+        <form onSubmit={handleFormSubmit}>
             <label>Ne ariyorsunuz?</label>
             <input />
         </form>
