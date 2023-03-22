@@ -1,3 +1,5 @@
+
+import React from 'react'
 function SearchHeader({ search }) {
     const handleFormSubmit = (event) => {
         event.preventDefault(); // Sayfanın Yenilenmesini Engeller
