@@ -1,14 +1,18 @@
 
-import React from 'react'
+import React, { useState } from 'react'
 function SearchHeader({ search }) {
+    const [value, setValue] = useState('')
     const handleFormSubmit = (event) => {
         event.preventDefault(); // Sayfanın Yenilenmesini Engeller
-        search('ersin')
+        search(value)
+    }
+    const handleChange = (event) => {
+        setValue(event.target.value)
     }
     return <div className="searchDiv">
         <form onSubmit={handleFormSubmit}>
             <label>Ne ariyorsunuz?</label>
-            <input />
+            <input value={value} onChange={handleChange} />
         </form>
     </div>;
 }
